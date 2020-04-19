@@ -8,6 +8,7 @@ if ["$GITHUB_EVENT_NAME" != "milestone"]; then
 
     echo "::debug::The event name was '$GITHUB_EVENT_NAME'"
     exit 0
+
 fi
 
 event_type=$(jq --raw-output .action $GITHUB_EVENT_PATH)
@@ -25,7 +26,7 @@ release_url=$(
 --milestone $milestone_name \
 --targetcommitish $GITHUB_SHA \
 --token $repo_token \
---owner $owner
+--owner $owner \
 --repository $repository)
 
 if [$? -ne 0];then
