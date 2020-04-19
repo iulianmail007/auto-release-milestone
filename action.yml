@@ -1,0 +1,11 @@
+
+name: 'AutoRealeseMilestone'
+description: 'My Desc'
+author: 'Ich'
+outputs:
+  release-url:              # change this
+    description: 'The URL of the GitHub drafted release'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  
